@@ -1,0 +1,118 @@
+(gdb) b main
+Breakpoint 1 at 0x72b: file p4original.c, line 8.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4original.c:8
+8   {
+(gdb) n
+9       int n= input_array_size();
+(gdb) s
+input_array_size () at p4original.c:18
+18  {
+(gdb) n
+20      printf("Enter the number of elements you wish to add: ");
+(gdb) n
+21      scanf("%d",&n);
+(gdb) n
+Enter the number of elements you wish to add: 3
+22      return n;
+(gdb) n
+23  }
+(gdb) s
+main () at p4original.c:10
+10      int a[n];
+(gdb) n
+11      input_array(n,a);
+(gdb) s
+input_array (n=3, a=0x7ffcaeb9d390) at p4original.c:27
+27      printf("Enter the elements: ");
+(gdb) n
+28      for(int i = 0 ; i < n; i++)
+(gdb) n
+30          scanf("%d",&a[i]);
+(gdb) n
+Enter the elements: 1
+28      for(int i = 0 ; i < n; i++)
+(gdb) 
+30          scanf("%d",&a[i]);
+(gdb) 
+7
+28      for(int i = 0 ; i < n; i++)
+(gdb) 
+30          scanf("%d",&a[i]);
+(gdb) 11
+Undefined command: "11".  Try "help".
+(gdb) n
+11
+28      for(int i = 0 ; i < n; i++)
+(gdb) n
+32  }
+(gdb) n
+main () at p4original.c:12
+12      int sum=sum_n_arrays(n,a);
+(gdb) s
+sum_n_arrays (n=3, a=0x7ffcaeb9d390) at p4original.c:36
+36      int sum = 0;
+(gdb) n
+37      for (int i = 0; i < n; i++)
+(gdb) n
+39          sum = sum + a[i];
+(gdb) n
+37      for (int i = 0; i < n; i++)
+(gdb) n
+39          sum = sum + a[i];
+(gdb) n
+37      for (int i = 0; i < n; i++)
+(gdb) 
+39          sum = sum + a[i];
+(gdb) n
+37      for (int i = 0; i < n; i++)
+(gdb) n
+41      return sum;
+(gdb) n
+42  }
+(gdb) s
+main () at p4original.c:13
+13     out_put(n,a,sum);
+(gdb) s
+out_put (n=3, a=0x7ffcaeb9d390, sum=19) at p4original.c:47
+47      for (int i =0; i < n; i++)
+(gdb) n
+49          printf("%d",a[i]);
+(gdb) n
+50          if(i!=n-1)
+(gdb) n
+51          printf(" + ");
+(gdb) n
+47      for (int i =0; i < n; i++)
+(gdb) n
+49          printf("%d",a[i]);
+(gdb) n
+50          if(i!=n-1)
+(gdb) n
+51          printf(" + ");
+(gdb) n
+47      for (int i =0; i < n; i++)
+(gdb) n
+49          printf("%d",a[i]);
+(gdb) n
+50          if(i!=n-1)
+(gdb) n
+47      for (int i =0; i < n; i++)
+(gdb) n
+53      printf(" is %d ",sum);
+(gdb) n
+54  }(gdb) n
+main () at p4original.c:14
+14      return 0;
+(gdb) n
+15  }
+(gdb) n
+__libc_start_main (main=0x55979a20071a <main>, argc=1, argv=0x7ffcaeb9d4d8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffcaeb9d4c8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) n
+1 + 7 + 11 is 19 

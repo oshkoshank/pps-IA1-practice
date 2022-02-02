@@ -1,0 +1,42 @@
+Breakpoint 1, main () at p2original.c:9
+9     a=input();
+(gdb) n
+Enter the number: 5
+10    b=input();
+(gdb) n
+Enter the number: 6
+11    c=input();
+(gdb) n
+Enter the number: 4
+12    int largest = cmp(a,b,c);
+(gdb) s
+cmp (a=5, b=6, c=4) at p2original.c:28
+28    if(a>=b && a>=c)
+(gdb) n
+34      if(b>c)
+(gdb) n
+36        larg = b;
+(gdb) n
+43    return larg;
+(gdb) n
+44  }
+(gdb) s
+main () at p2original.c:13
+13    output(a,b,c,largest);
+(gdb) s
+output (a=5, b=6, c=4, largest=6) at p2original.c:49
+49    printf("The largest among %d , %d and %d is %d ", a,b,c,largest);
+(gdb) n
+50  }
+(gdb) n
+main () at p2original.c:14
+14    return 0;
+(gdb) n
+15  }
+(gdb) n
+__libc_start_main (main=0x557e02e0071a <main>, argc=1, argv=0x7ffc25627ce8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffc25627cd8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) n
+The largest among 5 , 6 and 4 is 6

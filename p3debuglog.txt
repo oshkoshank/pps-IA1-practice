@@ -1,0 +1,111 @@
+(gdb) b main 
+Breakpoint 1 at 0x772: file p3original.c, line 8.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p3original.c:8
+8     int n=input_n();
+(gdb) s
+input_n () at p3original.c:15
+15  {
+(gdb) n
+17    printf("Enter the number till which you wish to find the sum upto: ");
+(gdb) 
+18    scanf("%d",&a);
+(gdb) 
+Enter the number till which you wish to find the sum upto: 5n
+19    return a;
+(gdb) n
+20  }
+(gdb) s
+main () at p3original.c:9
+9     int sum= sum_n(n);
+(gdb) s
+sum_n (n=5) at p3original.c:24
+24    int sum=0;
+(gdb) n
+25    for(int i = 1; i <= n; i++)
+(gdb) n
+27      sum=sum+i;
+(gdb) n
+25    for(int i = 1; i <= n; i++)
+(gdb) n
+27      sum=sum+i;
+(gdb) n
+25    for(int i = 1; i <= n; i++)
+(gdb) n
+27      sum=sum+i;
+(gdb) n
+25    for(int i = 1; i <= n; i++)
+(gdb) n
+27      sum=sum+i;
+(gdb) n
+25    for(int i = 1; i <= n; i++)
+(gdb) n
+27      sum=sum+i;
+(gdb) n
+25    for(int i = 1; i <= n; i++)
+(gdb) n
+29    return sum;
+(gdb) n
+30  }
+(gdb) s
+main () at p3original.c:10
+10    output(n,sum);
+(gdb) s
+output (n=5, sum=15) at p3original.c:34
+34    for(int i = 1; i <= n; i++)
+(gdb) n
+36     printf("%d",i);
+(gdb) n
+37     if(i!=n)
+(gdb) n
+38     printf("+");
+(gdb) n
+34    for(int i = 1; i <= n; i++)
+(gdb) n
+36     printf("%d",i);
+(gdb) n
+37     if(i!=n)
+(gdb) n
+38     printf("+");
+(gdb) n
+34    for(int i = 1; i <= n; i++)
+(gdb) n
+36     printf("%d",i);
+(gdb) n
+37     if(i!=n)
+(gdb) n
+38     printf("+");
+(gdb) n
+34    for(int i = 1; i <= n; i++)
+(gdb) n
+36     printf("%d",i);
+(gdb) n
+37     if(i!=n)
+(gdb) n
+38     printf("+");
+(gdb) n
+34    for(int i = 1; i <= n; i++)
+(gdb) n
+36     printf("%d",i);
+(gdb) n
+37     if(i!=n)
+(gdb) n
+34    for(int i = 1; i <= n; i++)
+(gdb) n
+40   printf(" is %d",sum);
+(gdb) n
+41  }(gdb) s
+main () at p3original.c:11
+11    return 0;
+(gdb) n
+12  }
+(gdb) n
+__libc_start_main (main=0x557aecc0076a <main>, argc=1, argv=0x7ffd88a25488, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffd88a25478) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) n
+1+2+3+4+5 is 15
