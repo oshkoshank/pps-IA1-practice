@@ -1,10 +1,18 @@
 #include <stdio.h>
 void input_two_strings();
-int strcmp();
+
+int strcmp(char*a, char*b)
+{       
+    int i;
+    for(i=0; a[i]!='\0'&& a[i]==b[i]; i++);
+    {
+    return (a[i]-b[i]);
+    }
+}
 void output();
 
 
-int main ()
+int main()
 {
   char a[30],b[30];
   input_two_strings(a,b);
@@ -15,25 +23,13 @@ int main ()
 
 
 
-void input_two_strings(char*a, char*b)
+void input_two_strings(char *a, char *b)
 {
   printf("Enter the fisrt string: ");
   scanf("%s",a);
   printf("Enter the second string: ");
   scanf("%s",b);
 }
-
-
-
-int strcmp(char *a, char *b)
-{       
-    int i;
-    for(i=0; a[i]!='\0'&& a[i]==b[i]; i++);
-    
-      return (a[i]-b[i]);
-    
-}
-
 
 
 void output(char *a, char *b, int result)
