@@ -1,0 +1,119 @@
+gdb) b main 
+Breakpoint 1 at 0x77b: file p8final.c, line 16.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p8final.c:16
+16  {
+(gdb) n
+17      int n = get_n();
+(gdb) s
+get_n () at p8final.c:27
+27  {
+(gdb) n
+29      printf("Enter the number of elements: ");
+(gdb) n
+30      scanf("%d",&n);
+(gdb) n
+Enter the number of elements: 2
+31      return n;
+(gdb) n
+32  }
+(gdb) s
+main () at p8final.c:18
+18      Complex c[n];
+(gdb) s
+19      input_n_complex(n,c);
+(gdb) s
+input_n_complex (n=2, c=0x7ffd6b058200) at p8final.c:37
+37    for(int i =0; i < n; i++)
+(gdb) n
+38   { printf("Enter the real part of Complex number %d : ",i+1);
+(gdb) n
+39    scanf("%f",&c[i].real);
+(gdb) n
+Enter the real part of Complex number 1 : 2
+40    printf("Enter the imiginary part of Complex number %d : ",i+1);
+(gdb) n
+41    scanf("%f",&c[i].imag);
+(gdb) n
+Enter the imiginary part of Complex number 1 : 3
+37    for(int i =0; i < n; i++)
+(gdb) n
+38   { printf("Enter the real part of Complex number %d : ",i+1);
+(gdb) n
+39    scanf("%f",&c[i].real);
+(gdb) n
+Enter the real part of Complex number 2 : 4
+40    printf("Enter the imiginary part of Complex number %d : ",i+1);
+(gdb) n
+41    scanf("%f",&c[i].imag);
+(gdb) n
+Enter the imiginary part of Complex number 2 : 5
+37    for(int i =0; i < n; i++)
+(gdb) n
+43  }
+(gdb) n
+main () at p8final.c:20
+20      Complex res=add_n_complex(n,c);
+(gdb) s
+add_n_complex (n=2, c=0x7ffd6b058200) at p8final.c:49
+49      res.real=0;
+(gdb) n
+50      res.imag=0;
+(gdb) n
+51      for(int i = 0; i < n;  i++)
+(gdb) n
+53          res.real=res.real+c[i].real;
+(gdb) n
+54          res.imag=res.imag+c[i].imag;
+(gdb) n
+51      for(int i = 0; i < n;  i++)
+(gdb) n
+53          res.real=res.real+c[i].real;
+(gdb) n
+54          res.imag=res.imag+c[i].imag;
+(gdb) n
+51      for(int i = 0; i < n;  i++)
+(gdb) n
+56      return res;
+(gdb) n
+57  }
+(gdb) s
+main () at p8final.c:21
+21      output(n,c,res);
+(gdb) s
+output (n=2, c=0x7ffd6b058200, res=...) at p8final.c:62
+62      for(int i = 0; i < n; i++)
+(gdb) n
+64          printf("%.1f+%.1fi\n  ",c[i].real,c[i].imag);
+(gdb) n
+2.0+3.0i
+65          if(i!=n-1)
+(gdb) n
+66          printf("+");
+(gdb) n
+62      for(int i = 0; i < n; i++)
+(gdb) n
+64          printf("%.1f+%.1fi\n  ",c[i].real,c[i].imag);
+(gdb) n
+  +4.0+5.0i
+65          if(i!=n-1)
+(gdb) n
+62      for(int i = 0; i < n; i++)
+(gdb) n
+68      printf("is %.1f+%.1fi",res.real,res.imag);
+(gdb) n
+69  }(gdb) n
+main () at p8final.c:22
+22      return 0;
+(gdb) n
+23  }
+(gdb) n
+__libc_start_main (main=0x55687620076a <main>, argc=1, argv=0x7ffd6b058378, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffd6b058368) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) n
+  is 6.0+8.0i

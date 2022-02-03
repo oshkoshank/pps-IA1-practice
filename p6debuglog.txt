@@ -1,0 +1,58 @@
+(gdb)  b main
+Breakpoint 1 at 0x7cf: file p6final.c, line 16.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p6final.c:16
+16  {
+(gdb) n
+18    input_two_strings(a,b);
+(gdb) s
+input_two_strings (a=0x7ffde0910710 "x\a\221\340\375\177", 
+    b=0x7ffde0910730 "@\333\071\202\334\177") at p6final.c:28
+28    printf("Enter the fisrt string: ");
+(gdb) n
+29    scanf("%s",a);
+(gdb) n
+Enter the fisrt string: hello
+30    printf("Enter the second string: ");
+(gdb) n
+31    scanf("%s",b);
+(gdb) n
+Enter the second string: world
+32  }
+(gdb) s
+main () at p6final.c:19
+19    int result=strcmp(a,b);
+(gdb) s
+strcmp (a=0x7ffde0910710 "hello", b=0x7ffde0910730 "world") at p6final.c:7
+7       for(i=0; a[i]!='\0'&& a[i]==b[i]; i++);
+(gdb) n
+9       return (a[i]-b[i]);
+(gdb) n
+11  }
+(gdb) s
+main () at p6final.c:20
+20    output(a,b,result);
+(gdb) s
+output (a=0x7ffde0910710 "hello", b=0x7ffde0910730 "world", result=-15)
+    at p6final.c:37
+37     if(result==0)
+(gdb) n
+43       if(result>0)
+(gdb) n
+49         printf(" %s is greater than %s ",b,a);
+(gdb) n
+52  }(gdb) n
+main () at p6final.c:21
+21    return 0;
+(gdb) n
+22  }
+(gdb) n
+__libc_start_main (main=0x5642a52007c7 <main>, argc=1, argv=0x7ffde0910848, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffde0910838) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) n
+ world is greater than hello 

@@ -1,0 +1,74 @@
+(gdb) b main
+Breakpoint 1 at 0x7f6: file p5final.c, line 25.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p5final.c:25
+25    float n= input();
+(gdb) s
+input () at p5final.c:4
+4   {
+(gdb) n
+6     printf("Enter the number ");
+(gdb) n
+7     scanf("%f",&n);
+(gdb) n
+Enter the number 2
+8     return n;
+(gdb) n
+9     }
+(gdb) s
+main () at p5final.c:26
+26    float result=my_sqrt(n);
+(gdb) s
+my_sqrt (n=2) at p5final.c:12
+12      float x = n;
+(gdb) n
+13      float y = n/2;
+(gdb) n
+14      float e = 0.000001; 
+(gdb) n
+15      while (x - y > e)
+(gdb) n
+17      x = (x + y)/2;
+(gdb) n
+18      y = n/x;
+(gdb) n
+15      while (x - y > e)
+(gdb) n
+17      x = (x + y)/2;
+(gdb) n
+18      y = n/x;
+(gdb) n
+15      while (x - y > e)
+(gdb) n
+17      x = (x + y)/2;
+(gdb) n
+18      y = n/x;
+(gdb) n
+15      while (x - y > e)
+(gdb) n
+17      x = (x + y)/2;
+(gdb) n
+18      y = n/x;
+(gdb) n
+15      while (x - y > e)
+(gdb) n
+20      return x;
+(gdb) n
+21  }
+(gdb) n
+main () at p5final.c:27
+27    output(n,result);
+(gdb) n
+28     return 0;
+(gdb) n
+29  }
+(gdb) n
+__libc_start_main (main=0x55d3382007ee <main>, argc=1, argv=0x7ffe0760b728, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffe0760b718) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) n
+Square root of 2.000000 is 1.414214

@@ -1,0 +1,76 @@
+(gdb) b main
+Breakpoint 1 at 0x722: file p7final.c, line 14.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p7final.c:14
+14      Complex a = input_complex();
+(gdb) s
+input_complex () at p7final.c:21
+21  {
+(gdb) n
+23      printf("Enter the Real part of complex number: ");
+(gdb) n
+24      scanf("%f",&a.real);
+(gdb) n
+Enter the Real part of complex number: 2
+25      printf("Enter the imiginary part of complex number: ");
+(gdb) n
+26      scanf("%f",&a.imiginary);
+(gdb) n
+Enter the imiginary part of complex number: 3     
+27      return (a);
+(gdb) n
+28  }
+(gdb) s
+main () at p7final.c:15
+15      Complex b = input_complex();
+(gdb) s
+input_complex () at p7final.c:21
+21  {
+(gdb) n
+23      printf("Enter the Real part of complex number: ");
+(gdb) n
+24      scanf("%f",&a.real);
+(gdb) n
+Enter the Real part of complex number: 4     
+25      printf("Enter the imiginary part of complex number: ");
+(gdb) n
+26      scanf("%f",&a.imiginary);
+(gdb) n
+Enter the imiginary part of complex number: 5
+27      return (a);
+(gdb) n
+28  }
+(gdb) s
+main () at p7final.c:16
+16      Complex res=add(a,b);
+(gdb) s
+add (a=..., b=...) at p7final.c:32
+32      c.real=(a.real)+(b.real);
+(gdb) n
+33      c.imiginary=(b.imiginary)+(a.imiginary);
+(gdb) n
+34      return c;
+(gdb) s
+35  }
+(gdb) s
+main () at p7final.c:17
+17      output(a,b,res);
+(gdb) s
+output (a=..., b=..., c=...) at p7final.c:39
+39      printf("%.1f + %.1fi + %.1f + %.1fi = %.1f + %.1fi",a.real,a.imiginary,b.real,b.imiginary,c.real,c.imiginary);
+(gdb) n
+40  }(gdb) s
+main () at p7final.c:18
+18      return 0;
+(gdb) n
+19  }
+(gdb) n
+__libc_start_main (main=0x55bdb560071a <main>, argc=1, argv=0x7ffe572d6bb8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffe572d6ba8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) n
+2.0 + 3.0i + 4.0 + 5.0i = 6.0 + 8.0i
